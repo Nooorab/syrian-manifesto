@@ -1,0 +1,877 @@
+/* Syrian Manifesto Website - Styles */
+/* Color Palette inspired by Syrian Flag & Government */
+
+:root {
+    /* New Syrian Flag Colors (2025) - Green, White, Black with Red Stars */
+    --syria-green: #007A3D;
+    --syria-dark-green: #005C2E;
+    --syria-red: #CE1126;
+    /* Red stars */
+    --syria-white: #FFFFFF;
+    --syria-black: #000000;
+
+    /* Accent Colors */
+    --gold: #D4AF37;
+    --gold-light: #E8C84B;
+    --gold-dark: #B8960C;
+
+    /* UI Colors */
+    --bg-dark: #0a1a14;
+    --bg-card: rgba(0, 104, 71, 0.15);
+    --bg-card-hover: rgba(0, 104, 71, 0.25);
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(0, 104, 71, 0.1);
+    --glass-border: rgba(212, 175, 55, 0.3);
+
+    /* Shadows */
+    --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+    --shadow-green: 0 0 40px rgba(0, 104, 71, 0.4);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Amiri', 'Cairo', 'Noto Sans Arabic', serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at top right, rgba(0, 104, 71, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(206, 17, 38, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Particle Animation Container */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-up 8s infinite;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0);
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1);
+    }
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Amiri', serif;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, var(--bg-dark) 100%);
+    pointer-events: none;
+}
+
+.eagle-icon {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 25px rgba(201, 162, 39, 0.6));
+    animation: pulse-glow 3s ease-in-out infinite;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+        transform: scale(1);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.8));
+        transform: scale(1.05);
+    }
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-intro {
+    max-width: 800px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    z-index: 1;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--gold);
+    border-radius: 25px;
+    position: relative;
+}
+
+.scroll-indicator span::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 10px;
+    background: var(--gold);
+    border-radius: 3px;
+    animation: scroll-down 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+/* Section Titles */
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1rem auto 0;
+}
+
+/* Statements Section */
+.statements-section {
+    padding: 6rem 0;
+}
+
+.statements-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Statement Card */
+.statement-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.statement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--syria-green), var(--gold), var(--syria-red));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.statement-card:hover::before,
+.statement-card.expanded::before {
+    transform: scaleX(1);
+}
+
+.statement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-gold);
+    border-color: var(--gold);
+    background: var(--bg-card-hover);
+}
+
+.statement-card.expanded {
+    background: var(--bg-card-hover);
+    box-shadow: var(--shadow-gold);
+    border-color: var(--gold);
+}
+
+.statement-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--syria-green), var(--syria-dark-green));
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.statement-title {
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.statement-preview {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.statement-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease;
+    opacity: 0;
+}
+
+.statement-card.expanded .statement-details {
+    max-height: 2000px;
+    padding-top: 1.5rem;
+    opacity: 1;
+}
+
+.statement-card.expanded .statement-preview {
+    display: none;
+}
+
+.statement-full-text {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.statement-reflection {
+    background: rgba(0, 104, 71, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-right: 4px solid var(--gold);
+}
+
+.statement-reflection h4 {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.statement-reflection p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.statement-islamic {
+    background: rgba(206, 17, 38, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border-right: 4px solid var(--syria-red);
+}
+
+.statement-islamic h4 {
+    color: var(--syria-red);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.statement-islamic p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.expand-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    color: var(--gold);
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.expand-indicator svg {
+    transition: transform 0.3s ease;
+}
+
+.statement-card.expanded .expand-indicator svg {
+    transform: rotate(180deg);
+}
+
+/* Commitment Section */
+.commitment-section {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.commitment-box {
+    background: linear-gradient(135deg, rgba(0, 104, 71, 0.3), rgba(0, 77, 53, 0.3));
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--gold);
+    border-radius: 30px;
+    padding: 4rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-gold);
+}
+
+.commitment-text {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--text-primary);
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+.commitment-text .highlight {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.signature-text {
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 1px dashed var(--gold);
+    border-radius: 15px;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.counter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.counter-label {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.counter-number {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: bold;
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    font-family: 'Cairo', sans-serif;
+    animation: counter-glow 2s ease-in-out infinite;
+}
+
+@keyframes counter-glow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 50px rgba(212, 175, 55, 0.8);
+    }
+}
+
+.counter-suffix {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.commit-btn {
+    background: linear-gradient(135deg, var(--syria-green), var(--syria-dark-green));
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-family: 'Amiri', serif;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 104, 71, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.commit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.commit-btn:hover::before {
+    left: 100%;
+}
+
+.commit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-gold);
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--syria-dark-green);
+}
+
+.commit-btn:disabled {
+    background: rgba(100, 100, 100, 0.3);
+    border-color: rgba(100, 100, 100, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.commit-btn:disabled:hover::before {
+    left: -100%;
+}
+
+.commit-success {
+    display: none;
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    animation: fade-in 0.5s ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Guestbook Section */
+.guestbook-section {
+    padding: 6rem 0;
+}
+
+.guestbook-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.guestbook-form {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    direction: rtl;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--syria-green), var(--syria-dark-green));
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-family: 'Amiri', serif;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--syria-dark-green);
+}
+
+.guestbook-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.guestbook-entry {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    animation: slide-in 0.3s ease;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.entry-name {
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.entry-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.entry-message {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 0;
+    text-align: center;
+    background: linear-gradient(180deg, transparent, rgba(0, 104, 71, 0.1));
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+.contact-title {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+    color: var(--gold);
+}
+
+/* Footer */
+.footer {
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.footer-author {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.footer-motto {
+    color: var(--syria-red);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .eagle-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .statements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .statement-card {
+        padding: 1.5rem;
+    }
+
+    .commitment-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .guestbook-form {
+        padding: 1.5rem;
+    }
+
+    .contact-box {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .statement-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .statement-title {
+        font-size: 1.2rem;
+    }
+
+    .commit-btn {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Quran/Hadith highlighting */
+.quran-text {
+    color: var(--gold);
+    font-family: 'Amiri', serif;
+    font-size: 1.1em;
+}
+
+/* Flag stripe decoration - New 2025 Syrian Flag (Green-White-Black) */
+.flag-stripe {
+    height: 6px;
+    background: linear-gradient(to left,
+            var(--syria-green) 0%,
+            var(--syria-green) 33%,
+            var(--syria-white) 33%,
+            var(--syria-white) 66%,
+            var(--syria-black) 66%,
+            var(--syria-black) 100%);
+    margin: 2rem 0;
+}
