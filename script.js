@@ -304,13 +304,15 @@ const COUNTER_KEY = 'commitments';
 
 async function loadCounter() {
     try {
-        // Fetch current global count from CounterAPI.dev
-        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}`);
+        // Fetch current global count from CounterAPI.dev (note trailing slash)
+        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}/`);
+        if (!response.ok) throw new Error('API error');
         const data = await response.json();
         const count = data.count || 0;
         animateCounter(count);
     } catch (error) {
-        console.log('Counter API unavailable, using local fallback');
+        console.log('Counter API unavailable:', error);
+        // Show fallback message or local count
         const count = localStorage.getItem('manifestoCommitCount') || 0;
         animateCounter(parseInt(count));
     }
