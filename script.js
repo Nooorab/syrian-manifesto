@@ -297,17 +297,17 @@ function renderStatements() {
     });
 }
 
-// Counter Functions - Using CountAPI for global shared counter
-const COUNTER_API_URL = 'https://api.countapi.xyz';
+// Counter Functions - Using CounterAPI.dev for global shared counter
+const COUNTER_API_URL = 'https://api.counterapi.dev/v1';
 const COUNTER_NAMESPACE = 'syrianmanifesto';
 const COUNTER_KEY = 'commitments';
 
 async function loadCounter() {
     try {
-        // Fetch current global count from CountAPI
-        const response = await fetch(`${COUNTER_API_URL}/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`);
+        // Fetch current global count from CounterAPI.dev
+        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}`);
         const data = await response.json();
-        const count = data.value || 0;
+        const count = data.count || 0;
         animateCounter(count);
     } catch (error) {
         console.log('Counter API unavailable, using local fallback');
@@ -331,10 +331,10 @@ function animateCounter(target) {
 
 async function incrementCounter() {
     try {
-        // Increment global count via CountAPI
-        const response = await fetch(`${COUNTER_API_URL}/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`);
+        // Increment global count via CounterAPI.dev (using /up endpoint)
+        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}/up`);
         const data = await response.json();
-        const newCount = data.value;
+        const newCount = data.count;
         commitCounter.textContent = newCount.toString();
 
         // Also save locally as backup
