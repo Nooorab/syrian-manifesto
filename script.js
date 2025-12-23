@@ -297,10 +297,23 @@ function renderStatements() {
     });
 }
 
-// Counter Functions
-function loadCounter() {
-    const count = localStorage.getItem('manifestoCommitCount') || 0;
-    animateCounter(parseInt(count));
+// Counter Functions - Using CountAPI for global shared counter
+const COUNTER_API_URL = 'https://api.countapi.xyz';
+const COUNTER_NAMESPACE = 'syrianmanifesto';
+const COUNTER_KEY = 'commitments';
+
+async function loadCounter() {
+    try {
+        // Fetch current global count from CountAPI
+        const response = await fetch(`${COUNTER_API_URL}/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`);
+        const data = await response.json();
+        const count = data.value || 0;
+        animateCounter(count);
+    } catch (error) {
+        console.log('Counter API unavailable, using local fallback');
+        const count = localStorage.getItem('manifestoCommitCount') || 0;
+        animateCounter(parseInt(count));
+    }
 }
 
 function animateCounter(target) {
@@ -316,11 +329,23 @@ function animateCounter(target) {
     }, 30);
 }
 
-function incrementCounter() {
-    let count = parseInt(localStorage.getItem('manifestoCommitCount') || 0);
-    count++;
-    localStorage.setItem('manifestoCommitCount', count);
-    commitCounter.textContent = count.toString();
+async function incrementCounter() {
+    try {
+        // Increment global count via CountAPI
+        const response = await fetch(`${COUNTER_API_URL}/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`);
+        const data = await response.json();
+        const newCount = data.value;
+        commitCounter.textContent = newCount.toString();
+
+        // Also save locally as backup
+        localStorage.setItem('manifestoCommitCount', newCount);
+    } catch (error) {
+        console.log('Counter API unavailable, using local fallback');
+        let count = parseInt(localStorage.getItem('manifestoCommitCount') || 0);
+        count++;
+        localStorage.setItem('manifestoCommitCount', count);
+        commitCounter.textContent = count.toString();
+    }
 
     // Add pulse animation
     commitCounter.style.transform = 'scale(1.2)';
