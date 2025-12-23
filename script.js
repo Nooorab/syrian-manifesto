@@ -268,7 +268,6 @@ function renderStatements() {
         <div class="statement-card" data-statement="${s.number}">
             <div class="statement-number">${s.number}</div>
             <h3 class="statement-title">${s.title}</h3>
-            <p class="statement-preview">${s.preview}</p>
             <div class="statement-details">
                 <div class="statement-full-text">${s.fullText.replace(/\n/g, '<br>')}</div>
                 <div class="statement-reflection">
