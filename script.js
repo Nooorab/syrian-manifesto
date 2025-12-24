@@ -249,7 +249,6 @@ const statements = [
 const statementsGrid = document.getElementById('statementsGrid');
 const commitBtn = document.getElementById('commitBtn');
 const commitCounter = document.getElementById('commitCounter');
-const commitSuccess = document.getElementById('commitSuccess');
 const guestbookForm = document.getElementById('guestbookForm');
 const guestbookEntries = document.getElementById('guestbookEntries');
 
@@ -360,7 +359,6 @@ function checkIfAlreadyCommitted() {
     if (localStorage.getItem('hasCommitted')) {
         commitBtn.disabled = true;
         commitBtn.textContent = 'شكراً لالتزامك ✓';
-        commitSuccess.style.display = 'block';
     }
 }
 
@@ -371,7 +369,6 @@ commitBtn.addEventListener('click', () => {
         incrementCounter();
         commitBtn.disabled = true;
         commitBtn.textContent = 'شكراً لالتزامك ✓';
-        commitSuccess.style.display = 'block';
 
         // Celebration effect
         createCelebration();
