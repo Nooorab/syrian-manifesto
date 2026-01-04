@@ -304,4 +304,186 @@ function renderStatements() {
 
 // Counter Functions - Using CounterAPI.dev for global shared counter
 const COUNTER_API_URL = 'https://api.counterapi.dev/v1';
-const COUNTER_NAMESPACE = '
+const COUNTER_NAMESPACE = 'syrianmanifesto';
+const COUNTER_KEY = 'commitments';
+
+async function loadCounter() {
+    try {
+        // Fetch current global count from CounterAPI.dev (note trailing slash)
+        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}/`);
+        if (!response.ok) throw new Error('API error');
+        const data = await response.json();
+        const count = data.count || 0;
+        animateCounter(count);
+    } catch (error) {
+        console.log('Counter API unavailable:', error);
+        // Show fallback message or local count
+        const count = localStorage.getItem('manifestoCommitCount') || 0;
+        animateCounter(parseInt(count));
+    }
+}
+
+function animateCounter(target) {
+    let current = 0;
+    const increment = Math.max(1, Math.ceil(target / 50));
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        commitCounter.textContent = current.toString();
+    }, 30);
+}
+
+async function incrementCounter() {
+    try {
+        // Increment global count via CounterAPI.dev (using /up endpoint)
+        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}/up`);
+        const data = await response.json();
+        const newCount = data.count;
+        commitCounter.textContent = newCount.toString();
+
+        // Also save locally as backup
+        localStorage.setItem('manifestoCommitCount', newCount);
+    } catch (error) {
+        console.log('Counter API unavailable, using local fallback');
+        let count = parseInt(localStorage.getItem('manifestoCommitCount') || 0);
+        count++;
+        localStorage.setItem('manifestoCommitCount', count);
+        commitCounter.textContent = count.toString();
+    }
+
+    // Add pulse animation
+    commitCounter.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+        commitCounter.style.transform = 'scale(1)';
+    }, 200);
+}
+
+function checkIfAlreadyCommitted() {
+    if (localStorage.getItem('hasCommitted')) {
+        commitBtn.disabled = true;
+        commitBtn.textContent = 'شكراً لالتزامك ✓';
+    }
+}
+
+// Commit Button Handler
+commitBtn.addEventListener('click', () => {
+    if (!localStorage.getItem('hasCommitted')) {
+        localStorage.setItem('hasCommitted', 'true');
+        incrementCounter();
+        commitBtn.disabled = true;
+        commitBtn.textContent = 'شكراً لالتزامك ✓';
+
+        // Celebration effect
+        createCelebration();
+    }
+});
+
+// Guestbook Functions
+function loadGuestbook() {
+    const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+    renderGuestbookEntries(entries);
+}
+
+function renderGuestbookEntries(entries) {
+    if (entries.length === 0) {
+        guestbookEntries.innerHTML = '<p style="text-align: center; color: var(--text-muted);">كن أول من يترك رسالة!</p>';
+        return;
+    }
+
+    guestbookEntries.innerHTML = entries.slice(0, 20).map(e => `
+        <div class="guestbook-entry">
+            <div class="entry-header">
+                <span class="entry-name">${escapeHtml(e.name)}</span>
+                <span class="entry-date">${e.date}</span>
+            </div>
+            <p class="entry-message">${escapeHtml(e.message)}</p>
+        </div>
+    `).join('');
+}
+
+guestbookForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('guestName').value.trim();
+    const message = document.getElementById('guestMessage').value.trim();
+
+    if (!name || !message) return;
+
+    const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+    const newEntry = {
+        name,
+        message,
+        date: new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' })
+    };
+
+    entries.unshift(newEntry);
+    localStorage.setItem('guestbookEntries', JSON.stringify(entries));
+
+    renderGuestbookEntries(entries);
+    guestbookForm.reset();
+});
+
+// Utility Functions
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Particle Animation
+function createParticles() {
+    const container = document.getElementById('particles');
+    const colors = ['#D4AF37', '#006847', '#CE1126'];
+
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        container.appendChild(particle);
+    }
+}
+
+// Celebration Effect
+function createCelebration() {
+    const colors = ['#D4AF37', '#006847', '#CE1126', '#FFFFFF'];
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.style.cssText = `
+                position: fixed;
+                width: 10px;
+                height: 10px;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                left: ${Math.random() * 100}%;
+                top: -10px;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                animation: fall 3s linear forwards;
+            `;
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 3000);
+        }, i * 50);
+    }
+
+    // Add falling animation 
+    if (!document.getElementById('confetti-style')) {
+        const style = document.createElement('style');
+        style.id = 'confetti-style';
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
