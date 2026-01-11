@@ -293,7 +293,7 @@ function renderStatements() {
                     <p>${s.islamic}</p>
                 </div>
                 <div class="statement-reflection">
-                    <h4>💭 تأمل</h4>
+                    <h4>🌱 تأمل</h4>
                     <p>${s.reflection}</p>
                 </div>
             </div>
