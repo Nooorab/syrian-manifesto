@@ -405,7 +405,8 @@ h6 {
 }
 
 .statement-reflection {
-    background: rgba(206, 17, 38, 0.1);
+   /* background: rgba(206, 17, 38, 0.1); */
+    background: rgba(225, 225, 208, 1);
     border-radius: 15px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
