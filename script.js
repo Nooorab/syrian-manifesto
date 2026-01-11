@@ -288,13 +288,13 @@ function renderStatements() {
             <p class="statement-preview">${s.preview}</p>
             <div class="statement-details">
                 <div class="statement-full-text">${s.fullText.replace(/\n/g, '<br>')}</div>
+                 <div class="statement-islamic">
+                    <h4>📖 الأساس الإسلامي</h4>
+                    <p>${s.islamic}</p>
+                </div>
                 <div class="statement-reflection">
                     <h4>💭 تأمل</h4>
                     <p>${s.reflection}</p>
-                </div>
-                <div class="statement-islamic">
-                    <h4>📖 الأساس الإسلامي</h4>
-                    <p>${s.islamic}</p>
                 </div>
             </div>
             <div class="expand-indicator">
