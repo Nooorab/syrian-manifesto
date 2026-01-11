@@ -410,11 +410,11 @@ h6 {
     border-radius: 15px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    border-right: 4px solid var(--gold);
+    border-right: 4px solid var(--syria-red);
 }
 
 .statement-reflection h4 {
-    color: var(--gold);
+    color: var(--syria-red);
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
 }
@@ -429,11 +429,12 @@ h6 {
     background: rgba(0, 104, 71, 0.2);
     border-radius: 15px;
     padding: 1.5rem;
-    border-right: 4px solid var(--syria-red);
+    border-right: 4px solid var(--gold); 
+   /* border-right: 4px solid var(--syria-red); */
 }
 
 .statement-islamic h4 {
-    color: var(--syria-red);
+    color: var(--gold);
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
 }
