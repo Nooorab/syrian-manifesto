@@ -878,6 +878,11 @@ h6 {
     color: var(--gold);
     margin-bottom: 0.3rem;
 }
+.footer-version {
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+}
 
 .footer-motto {
     color: var(--text-muted);
