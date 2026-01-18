@@ -405,7 +405,7 @@ h6 {
 }
 
 .statement-reflection {
-   /* background: rgba(206, 17, 38, 0.1); */
+    /* background: rgba(206, 17, 38, 0.1); */
     background: rgba(210, 210, 190, 1);
     border-radius: 15px;
     padding: 1.5rem;
@@ -429,8 +429,8 @@ h6 {
     background: rgba(0, 104, 71, 0.2);
     border-radius: 15px;
     padding: 1.5rem;
-    border-right: 4px solid var(--gold); 
-   /* border-right: 4px solid var(--syria-red); */
+    border-right: 4px solid var(--gold);
+    /* border-right: 4px solid var(--syria-red); */
 }
 
 .statement-islamic h4 {
@@ -868,6 +868,84 @@ h6 {
     text-decoration: underline;
 }
 
+.footer-contact {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Social Media Links */
+.footer-socials {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: var(--gold);
+    text-decoration: none;
+    background: rgba(10, 20, 15, 0.6);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--gold), transparent, var(--gold-dark));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    animation: rotate-glow 3s linear infinite;
+}
+
+@keyframes rotate-glow {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--syria-dark-green);
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+    border-color: transparent;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+.social-link i {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover i {
+    transform: scale(1.1);
+}
+
+.social-link span {
+    display: none;
+}
+
 /* Center - Title & Motto */
 .footer-center {
     text-align: center;
@@ -878,6 +956,7 @@ h6 {
     color: var(--gold);
     margin-bottom: 0.3rem;
 }
+
 .footer-version {
     font-size: 1.2rem;
     color: var(--gold);
