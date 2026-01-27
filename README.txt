@@ -29,26 +29,6 @@ TECHNICAL DETAILS
 • Fully responsive design
 
 
-HOW TO RUN
-----------
-Option 1: Open index.html directly in a web browser
-
-Option 2: Run a local server
-    - Navigate to the project folder in terminal
-    - Run: python3 -m http.server 8000
-    - Open http://localhost:8000 in your browser
-
-
-FILE STRUCTURE
---------------
-├── index.html          - Main HTML file
-├── styles.css          - All CSS styles
-├── script.js           - JavaScript functionality
-├── picture/            - Image assets
-│   └── Gov_shaheen.jpg - Government eagle emblem
-├── README.txt          - This documentation file
-└── manifesto_structure.md - Manifesto content structure
-
 
 CONTACT
 -------
