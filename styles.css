@@ -1059,3 +1059,58 @@ h6 {
             var(--syria-black) 100%);
     margin: 2rem 0;
 }
+
+/* Floating PDF Download Button */
+.floating-pdf-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 0.5rem 1rem;
+    background: rgba(30, 35, 40, 0.95);
+    border: 2.5px solid var(--gold);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.floating-pdf-btn:hover {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--syria-dark-green);
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    border-color: var(--gold-light);
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(212, 175, 55, 1);
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .floating-pdf-btn {
+        font-size: 0.9rem;
+        padding: 0.65rem 1.3rem;
+        bottom: 20px;
+        left: 20px;
+    }
+}
