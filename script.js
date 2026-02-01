@@ -30,7 +30,7 @@ const statements = [
 
 لستين عامًا، فعل الأقوياء المتسلطون ما شاؤوا، ودفع الباقون الثمن دمًا ومعاناة.
 
-لن أُعيد إنتاج هذا المنطق في تفاصيل حياتي. فبعد أن عشنا تحت وطأة الظُلم و الظَلمة، نَعلم الآن أنَّ أحد معاني الرحمة يتضمن السؤال قبل الفعل: مَن سيتأذّى؟ هل سيُحدث هذا معاناةً للآخرين؟ 
+لن أُعيد إنتاج هذا المنطق في تفاصيل حياتي. فبعد أن عشنا تحت وطأة الظُلم و الظَلمة، نَعلم الآن أنَّ أحد معاني الرحمة يتضمن السؤال قبل الفعل: مَن سيتأذّى؟ هل سيُحدث هذا معاناةً للآخرين؟ 
 
 الطفل لا يختار الهواء الذي يتنفسه. المسن لا يملك أن يطلب مني التوقف. الحامل لا تستطيع حماية جنينها من دخاني.
 
@@ -90,7 +90,7 @@ const statements = [
 
 سأسأل، أبحث، أستمع، وأتفكر قبل الحكم.
 
-لن أسمح للشائعات أن تفرق بيني وبين جاري، أو أن تسيطر على قراراتي. فرُبَّ كلمةٍ ”بريئةٍ“ خربت بيوتاً.`,
+لن أسمح للشائعات أن تفرق بيني وبين جاري، أو أن تسيطر على قراراتي. فرُبَّ كلمةٍ "بريئةٍ" خربت بيوتاً.`,
         islamic: "«يَا أَيُّهَا الَّذِينَ آمَنُوا إِن ج َ اءَكُمْ فَاس ِ ق ٌ بِنَبَإٍ فَتَبَيَّنُوا أَن تُص ِ يبُوا قَوْمًا بِج َ هَالَةٍ فَتُص ْ بِح ُ وا عَلَىٰ مَا فَعَلْتُمْ نَادِمِينَ» (الحجرات:6) فما بالكم عندما يكون الفاسق أمماً تداعت علينا تداعي الأكلة إلى قصعتها؟",
         reflection: "متى كانت آخر مرة نقلت فيها خبرًا بلا تحقق؟ كيف يمكن أن أكون مصدرًا للحق، لا للفتنة؟"
 
@@ -178,7 +178,7 @@ const statements = [
 هل أزعجك مصطلح شبيح؟ هل هزّك؟ هل شعرت أنه قاسٍ؟
 هذا جيّد، فطرتك بخير بإذن الله، وما شعرت به دليل قوتك الأخلاقية.
 
-فالمقصود بالكلمة ليس شتم أو وصم الأشخاص، بل تسمية سلوكٍ معروف، سلوك الفوقية و التعالي على الناس والقانون، وتبرير الخطأ حين يخدم المصلحة الشخصية، والسير مع القوّة لا مع الحق.
+فالمقصود بالكلمة ليس شتم أو وصم الأشخاص، بل تسمية سلوكٍ معروف، سلوك الفوقية و التعالي على الناس والقانون، وتبرير الخطأ حين يخدم المصلحة الشخصية، والسير مع القوّة لا مع الحق.
 كان النبي ﷺ يواجه الخطأ بصراحة، ليكشف السلوك ويصححه، لا ليهين صاحبه، كما حدث مع أبي ذر الغفاري رضي الله عنه حين قال له: «إنك امرؤٌ فيك جاهلية».
 
 أنت مؤيد و مُحب للبلد إذا اخترت خلاف ذلك، حتى لو كلّفك ذلك:
@@ -204,13 +204,13 @@ const statements = [
 
 يمكن هو أصغر منك أن يعلّمك شيئًا مفيداً. يمكن لشخص من خلفية مختلفة أن يدلك على طريقٍ أفضل.
 
- هل سأقبلها؟ أم سأتمسك بما أعرف حتى لو كنت مخطئًا، مفضلاً العادة على الحق؟
+ هل سأقبلها؟ أم سأتمسك بما أعرف حتى لو كنت مخطئًا، مفضلاً العادة على الحق؟
 
 كتاب، حديث، تجربة، كلها دعوات للنمو.
 
 أخي، أختي، سوريا القديمة ماتت. نحن سنبني شيئًا لم يكن موجودًا في ذاكرتنا الحديثة.
 
-سنبني أمةً يفكر الناس فيها بأنفسهم، حيث يمكن مُساءلة و مراجعة الطرق القديمة في التفكير، و يكون التعلم مستمراً. سورية التي سنضاهي بها ما سمعناه عن خيرها من أجدادنا و كل من زارها عبر التاريخ. 
+سنبني أمةً يفكر الناس فيها بأنفسهم، حيث يمكن مُساءلة و مراجعة الطرق القديمة في التفكير، و يكون التعلم مستمراً. سورية التي سنضاهي بها ما سمعناه عن خيرها من أجدادنا و كل من زارها عبر التاريخ. 
 
 الأمر مرعب وجميل بآن واحد. سأكون شجاعًا للتغيير. سأكون متواضعًا للتعلم.`,
         islamic: "»طلب العلم فريضة على كل مسلم« (الترمذي) - التعلم ليس مقصورًا على مرحلة معينة من الحياة، بل هو مسؤولية مستمرة.",
@@ -268,14 +268,12 @@ const statements = [
 const statementsGrid = document.getElementById('statementsGrid');
 const commitBtn = document.getElementById('commitBtn');
 const commitCounter = document.getElementById('commitCounter');
-const guestbookForm = document.getElementById('guestbookForm');
-const guestbookEntries = document.getElementById('guestbookEntries');
+const commitSuccess = document.getElementById('commitSuccess');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     renderStatements();
     loadCounter();
-    loadGuestbook();
     createParticles();
     checkIfAlreadyCommitted();
 });
@@ -315,25 +313,14 @@ function renderStatements() {
     });
 }
 
-// Counter Functions - Using CounterAPI.dev for global shared counter
-const COUNTER_API_URL = 'https://api.counterapi.dev/v1';
-const COUNTER_NAMESPACE = 'syrianmanifesto';
-const COUNTER_KEY = 'commitments';
-
-async function loadCounter() {
-    try {
-        // Fetch current global count from CounterAPI.dev (note trailing slash)
-        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}/`);
-        if (!response.ok) throw new Error('API error');
-        const data = await response.json();
-        const count = data.count || 0;
-        animateCounter(count);
-    } catch (error) {
-        console.log('Counter API unavailable:', error);
-        // Show fallback message or local count
-        const count = localStorage.getItem('manifestoCommitCount') || 0;
-        animateCounter(parseInt(count));
-    }
+// Counter Functions - Simple local counter with optional display number
+function loadCounter() {
+    // Get the stored count or start from a base number
+    const baseCount = 1247; // Starting display number
+    const localCommits = parseInt(localStorage.getItem('localCommitCount') || '0');
+    const displayCount = baseCount + localCommits;
+    
+    animateCounter(displayCount);
 }
 
 function animateCounter(target) {
@@ -349,23 +336,16 @@ function animateCounter(target) {
     }, 30);
 }
 
-async function incrementCounter() {
-    try {
-        // Increment global count via CounterAPI.dev (using /up endpoint)
-        const response = await fetch(`${COUNTER_API_URL}/${COUNTER_NAMESPACE}/${COUNTER_KEY}/up`);
-        const data = await response.json();
-        const newCount = data.count;
-        commitCounter.textContent = newCount.toString();
-
-        // Also save locally as backup
-        localStorage.setItem('manifestoCommitCount', newCount);
-    } catch (error) {
-        console.log('Counter API unavailable, using local fallback');
-        let count = parseInt(localStorage.getItem('manifestoCommitCount') || 0);
-        count++;
-        localStorage.setItem('manifestoCommitCount', count);
-        commitCounter.textContent = count.toString();
-    }
+function incrementCounter() {
+    // Increment local count
+    let localCount = parseInt(localStorage.getItem('localCommitCount') || '0');
+    localCount++;
+    localStorage.setItem('localCommitCount', localCount);
+    
+    // Update display
+    const baseCount = 1247;
+    const newCount = baseCount + localCount;
+    commitCounter.textContent = newCount.toString();
 
     // Add pulse animation
     commitCounter.style.transform = 'scale(1.2)';
@@ -378,6 +358,7 @@ function checkIfAlreadyCommitted() {
     if (localStorage.getItem('hasCommitted')) {
         commitBtn.disabled = true;
         commitBtn.textContent = 'شكراً لالتزامك ✓';
+        commitSuccess.style.display = 'block';
     }
 }
 
@@ -388,55 +369,11 @@ commitBtn.addEventListener('click', () => {
         incrementCounter();
         commitBtn.disabled = true;
         commitBtn.textContent = 'شكراً لالتزامك ✓';
+        commitSuccess.style.display = 'block';
 
         // Celebration effect
         createCelebration();
     }
-});
-
-// Guestbook Functions
-function loadGuestbook() {
-    const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
-    renderGuestbookEntries(entries);
-}
-
-function renderGuestbookEntries(entries) {
-    if (entries.length === 0) {
-        guestbookEntries.innerHTML = '<p style="text-align: center; color: var(--text-muted);">كن أول من يترك رسالة!</p>';
-        return;
-    }
-
-    guestbookEntries.innerHTML = entries.slice(0, 20).map(e => `
-        <div class="guestbook-entry">
-            <div class="entry-header">
-                <span class="entry-name">${escapeHtml(e.name)}</span>
-                <span class="entry-date">${e.date}</span>
-            </div>
-            <p class="entry-message">${escapeHtml(e.message)}</p>
-        </div>
-    `).join('');
-}
-
-guestbookForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('guestName').value.trim();
-    const message = document.getElementById('guestMessage').value.trim();
-
-    if (!name || !message) return;
-
-    const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
-    const newEntry = {
-        name,
-        message,
-        date: new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' })
-    };
-
-    entries.unshift(newEntry);
-    localStorage.setItem('guestbookEntries', JSON.stringify(entries));
-
-    renderGuestbookEntries(entries);
-    guestbookForm.reset();
 });
 
 // Utility Functions
